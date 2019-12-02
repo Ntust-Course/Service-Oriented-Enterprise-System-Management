@@ -1,9 +1,18 @@
 import pika
 
 
-def consume(host="soa-rabbitmq-server"):
+credentials = pika.PlainCredentials("test", "test")
+
+
+def build_param(
+    host="soa-rabbitmq-server", **kwargs
+) -> pika.ConnectionParameters:
+    return pika.ConnectionParameters(host, credentials=credentials, **kwargs)
+
+
+def consume():
     # Logic of consume message
-    connection = pika.BlockingConnection()
+    connection = pika.BlockingConnection(build_param())
     channel = connection.channel()
 
     for method_frame, properties, body in channel.consume("test"):
@@ -21,3 +30,7 @@ def consume(host="soa-rabbitmq-server"):
     requeued_messages = channel.cancel()
     print(f"Requeued {requeued_messages} messages")
     connection.close()
+
+
+if __name__ == "__main__":
+    consume()

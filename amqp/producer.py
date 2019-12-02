@@ -1,10 +1,13 @@
 import pika
 
 
+credentials = pika.PlainCredentials("test", "test")
+
+
 def build_param(
     host="soa-rabbitmq-server", **kwargs
 ) -> pika.ConnectionParameters:
-    return pika.ConnectionParameters(host, **kwargs)
+    return pika.ConnectionParameters(host, credentials=credentials, **kwargs)
 
 
 def produce():
@@ -17,4 +20,5 @@ def produce():
 
 
 if __name__ == "__main__":
-    produce()
+    while True:
+        produce()
