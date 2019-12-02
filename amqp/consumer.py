@@ -1,5 +1,7 @@
-import pika
+from time import sleep
 
+import pika
+from pika.adapters.blocking_connection import BlockingChannel
 
 credentials = pika.PlainCredentials("test", "test")
 
@@ -32,5 +34,18 @@ def consume():
     connection.close()
 
 
+def callback(ch: BlockingChannel, method, properties, body):
+    print(f" [x] Recived {repr(body)}")
+    sleep(5)
+    # ch.basic_ack(delivery_tag=method.delivery_tag)
+
+
+def consume_test():
+    connection = pika.BlockingConnection(build_param())
+    channel = connection.channel()
+    channel.queue_declare(queue="test")
+    channel.start_consuming()
+
+
 if __name__ == "__main__":
-    consume()
+    consume_test()

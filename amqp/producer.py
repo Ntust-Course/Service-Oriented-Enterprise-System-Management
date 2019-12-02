@@ -19,6 +19,17 @@ def produce():
     connection.close()
 
 
+def produce_test():
+    connection = pika.BlockingConnection(build_param())
+    channel = connection.channel()
+    channel.queue_declare(queue="test")
+    channel.basic_publish(exchange="", routing_key="test", body="1")
+    channel.basic_publish(exchange="", routing_key="test", body="2")
+    channel.basic_publish(exchange="", routing_key="test", body="3")
+    print("send msg to rabbitmq successful.")
+    connection.close()
+
+
 if __name__ == "__main__":
-    while True:
-        produce()
+    # while True:
+    produce_test()
