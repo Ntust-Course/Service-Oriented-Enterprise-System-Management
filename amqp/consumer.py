@@ -44,6 +44,8 @@ def consume_test():
     connection = pika.BlockingConnection(build_param())
     channel = connection.channel()
     channel.queue_declare(queue="test")
+    channel.basic_consume(queue="test", on_message_callback=callback)
+    print(" [*] Waiting for messages. Press Ctrl+C to exit.")
     channel.start_consuming()
 
 
