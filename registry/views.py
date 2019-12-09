@@ -1,7 +1,7 @@
 from flask import jsonify, request
 from flask.views import MethodView
 
-from controller import ServiceRegistryController
+from controllers import ServiceRegistryController
 from models import Service
 
 
