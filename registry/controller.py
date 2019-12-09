@@ -10,8 +10,8 @@ class ServiceRegistryController:
     ]
 
     @classmethod
-    def get(cls) -> List[Dict[str, str]]:
-        return list(map(asdict, cls.service_list))
+    def get(cls) -> List[Service]:
+        return cls.service_list
 
     @classmethod
     def post(cls, service: Service):

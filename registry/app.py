@@ -10,7 +10,7 @@ class RegistryAPI(MethodView):
         return jsonify(ServiceRegistryController.get())
 
     def post(self):
-        ServiceRegistryController.post(Service.from_form_data(request.form))
+        ServiceRegistryController.post(Service.from_form(request.form))
         return self.get()
 
     def delete(self):
