@@ -1,12 +1,22 @@
+import socket
 from dataclasses import asdict
 from typing import Dict, List
 
 from models import Service
 
+url_fmt = "{protocol}://{ip}:{port}"
+
 
 class ServiceRegistryController:
     service_list: List[Service] = [
-        Service(name="Registry", location="myprotocol://myip:myport")
+        Service(
+            name="Registry",
+            url=url_fmt.format(
+                protocol="http",
+                ip=socket.gethostbyname(socket.gethostname()),
+                port="5000",
+            ),
+        )
     ]
 
     @classmethod
