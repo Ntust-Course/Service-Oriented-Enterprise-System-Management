@@ -14,7 +14,7 @@ The service that can publish message and consume message with AMQP (Advanced Mes
 
 ### [Registry](registry)
 
-Service Registry that can bind and execute with _Service Provider_ and _Service Consumer_.
+Service Registry that can be register and find by _Service Provider_ and _Service Consumer_.
 
 ### [Order Service](order_service)
 
