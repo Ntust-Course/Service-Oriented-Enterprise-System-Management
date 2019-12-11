@@ -2,7 +2,7 @@
 
 ## Final Presentation
 
-> Only codes on GitHub, others maybe publish on _Notion_ soon.
+> Only codes on GitHub, other documents maybe publish on _Notion_ soon.
 
 ## Fundamental
 
