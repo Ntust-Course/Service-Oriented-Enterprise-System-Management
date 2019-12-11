@@ -1,8 +1,7 @@
 from random import randint
 
-from flask import Flask, jsonify
-
 import requests
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
