@@ -16,6 +16,10 @@ The service that can publish message and consume message with AMQP (Advanced Mes
 
 Service Registry that can be register and find by _Service Provider_ and _Service Consumer_.
 
-### [Order Service](order_service)
+### [Provider](provider)
 
-An order service api for end user to use.
+REST
+
+SOAP
+
+### [Consumer](consumer)
