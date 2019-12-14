@@ -1,21 +1,32 @@
-from time import ctime
+from random import randint
 
-from flask import Flask
-from flaskext.enterprise import Enterprise
+from spyne import Application, Integer, Iterable, ServiceBase, Unicode, rpc
+from spyne.protocol.soap import Soap11
+from spyne.server.wsgi import WsgiApplication
 
-app = Flask(__name__)
-
-enterprise = Enterprise(app)
+INV = 10000
 
 
-class DemoService(enterprise.SOAPService):
-    __soap_server_address__ = "/soap"
-    __soap_target_namespace__ = "ns"
+class InventoryService(ServiceBase):
+    @rpc(_returns=Integer)
+    def get_balance(self):
+        global INV
+        INV -= randint(0, 100)
+        return INV
 
-    @enterprise.soap(_returns=enterprise._sp.String)
-    def get_time(self):
-        return ctime()
+
+application = Application(
+    [InventoryService],
+    "spyne.examples.hello.soap",
+    in_protocol=Soap11(validator="lxml"),
+    out_protocol=Soap11(),
+)
+
+wsgi_application = WsgiApplication(application)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    from wsgiref.simple_server import make_server
+
+    server = make_server(host="127.0.0.1", port=5000, app=wsgi_application)
+    server.serve_forever()

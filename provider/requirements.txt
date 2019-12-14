@@ -1,3 +1,6 @@
+-e git://github.com/flomincucci/sec-wall.git#egg=sec-wall
+-e git://github.com/arskom/spyne.git#egg=spyne
 flask
-Flask-Enterprise
+spyne
+flask-spyne
 requests
