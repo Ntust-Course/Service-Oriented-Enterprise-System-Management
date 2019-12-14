@@ -1,6 +1,6 @@
 from zeep import Client
 
-wsdl = "http://www.soapclient.com/xml/soapresponder.wsdl"
+wsdl = "http://localhost:5000/soap?wsdl"
 client = Client(wsdl=wsdl)
-print(client.service.Method1("First", "Second"))
+print(client.service.get_balance())
 
