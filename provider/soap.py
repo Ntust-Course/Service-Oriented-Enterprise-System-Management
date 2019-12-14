@@ -9,7 +9,7 @@ INV = 10000
 
 class InventoryService(ServiceBase):
     @rpc(_returns=Integer)
-    def get_balance(self):
+    def get_inventory(self):
         global INV
         INV -= randint(0, 100)
         return INV
