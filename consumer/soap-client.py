@@ -1,5 +1,5 @@
-"""Deprecated with zeep"""
-from suds.client import Client
+from zeep import Client
 
-c = Client("http://localhost:5000/soap?wsdl")
-print(c.service.get_balance())
+wsdl = "http://localhost:5000/soap?wsdl"
+client = Client(wsdl=wsdl)
+print(client.service.get_balance())
