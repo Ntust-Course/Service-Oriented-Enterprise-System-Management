@@ -16,6 +16,7 @@ def inventory():
     """simulate the current inventory"""
     global INV
     INV -= randint(0, 100)
+    # NOTE: json or another response type
     return jsonify({"inventory": INV})
 
 
