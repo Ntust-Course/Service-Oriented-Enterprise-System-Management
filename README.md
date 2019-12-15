@@ -18,8 +18,10 @@ Service Registry that can be register and find by _Service Provider_ and _Servic
 
 ### [Provider](provider)
 
-REST
-
-SOAP
+- REST
+- SOAP
 
 ### [Consumer](consumer)
+
+- REST
+- SOAP
