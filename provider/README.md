@@ -17,3 +17,15 @@ Provide some services and informations for consumers.
 ## TODO
 
 - Integration rest and soap
+
+## Build Image
+
+```shell
+docker build . -t sheiun/soa-provider
+```
+
+## Run Container
+
+```shell
+docker run -d -p 5000:5000 --name provider sheiun/soa-provider python <app_name.py>
+```

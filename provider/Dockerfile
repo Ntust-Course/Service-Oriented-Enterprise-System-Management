@@ -4,4 +4,4 @@ WORKDIR /app/
 COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 ENV FLASK_ENV="docker"
-EXPOSE 5000
+EXPOSE 5555 6666

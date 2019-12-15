@@ -4,7 +4,7 @@ from spyne import Application, Integer, Iterable, ServiceBase, Unicode, rpc
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
 
-INV = 10000
+from .utils import INV, deregister, register
 
 
 class InventoryService(ServiceBase):
@@ -28,5 +28,9 @@ wsgi_application = WsgiApplication(application)
 if __name__ == "__main__":
     from wsgiref.simple_server import make_server
 
-    server = make_server(host="0.0.0.0", port=5000, app=wsgi_application)
-    server.serve_forever()
+    server = make_server(host="0.0.0.0", port=6666, app=wsgi_application)
+    try:
+        register({"name": "inventory-soap", "url": "http://localhost:6666"})
+        server.serve_forever()
+    finally:
+        deregister("inventory-soap")
