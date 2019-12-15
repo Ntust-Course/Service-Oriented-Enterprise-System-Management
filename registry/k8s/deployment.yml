@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-registry
+  namespace: service-registry
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: service-registry
+  template:
+    metadata:
+      labels:
+        app: service-registry
+    spec:
+      containers:
+        - name: service-registry
+          image: sheiun/soa-registry:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          command: ["python", "app.py"]
