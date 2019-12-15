@@ -19,7 +19,7 @@ def inventory():
 
 
 try:
-    register({"name": "inventory-rest", "url": "http://localhost:5555"})
-    app.run(host="0.0.0.0", port=5555)
+    register({"name": "inventory-rest", "url": "http://localhost:8001"})
+    app.run(host="0.0.0.0", port=8001)
 finally:
     deregister("inventory-rest")

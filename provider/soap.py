@@ -28,9 +28,9 @@ wsgi_application = WsgiApplication(application)
 if __name__ == "__main__":
     from wsgiref.simple_server import make_server
 
-    server = make_server(host="0.0.0.0", port=6666, app=wsgi_application)
+    server = make_server(host="0.0.0.0", port=8002, app=wsgi_application)
     try:
-        register({"name": "inventory-soap", "url": "http://localhost:6666"})
+        register({"name": "inventory-soap", "url": "http://localhost:8002"})
         server.serve_forever()
     finally:
         deregister("inventory-soap")
