@@ -8,6 +8,12 @@ Docker: <https://hub.docker.com/r/sheiun/soa-registry>
 docker pull sheiun/soa-registry
 ```
 
+## Create network
+
+```bash
+docker network create soa
+```
+
 ## Build image yourself
 
 ```bash

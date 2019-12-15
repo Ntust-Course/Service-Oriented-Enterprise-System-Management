@@ -27,5 +27,5 @@ docker build . -t sheiun/soa-provider
 ## Run Container
 
 ```shell
-docker run -d -p 5000:5000 --name provider sheiun/soa-provider python <app_name.py>
+docker run -d -p <port>:<port> --name <name> --network soa sheiun/soa-provider python <app_name.py>
 ```
