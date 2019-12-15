@@ -3,7 +3,7 @@ from random import randint
 import requests
 from flask import Flask, jsonify
 
-from .utils import INV, deregister, register
+from utils import INV, deregister, register
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False

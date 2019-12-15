@@ -4,7 +4,7 @@ from spyne import Application, Integer, Iterable, ServiceBase, Unicode, rpc
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
 
-from .utils import INV, deregister, register
+from utils import INV, deregister, register
 
 
 class InventoryService(ServiceBase):
