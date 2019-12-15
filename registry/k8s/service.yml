@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: soa-registry
-  namespace: soa-registry
+  namespace: soa
 spec:
   selector:
     app: soa-registry

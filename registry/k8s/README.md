@@ -1,4 +1,4 @@
-# Deploy
+# Deployment
 
 ## Steps
 
@@ -39,6 +39,12 @@ kube-system        Active   21m
 soa-registry   Active   7m52s
 ```
 
+## Check status
+
 ```shell
-kubectl get soa-registry -n soa-registry
+kubectl get deployment -n soa
+```
+
+```shell
+kubectl get -n soa
 ```

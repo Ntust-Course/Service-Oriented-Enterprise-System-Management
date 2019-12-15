@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: soa-registry
-  namespace: soa-registry
+  namespace: soa
 spec:
   replicas: 3
   selector:
