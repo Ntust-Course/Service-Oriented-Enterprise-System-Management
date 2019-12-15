@@ -36,5 +36,9 @@ docker             Active   20m
 kube-node-lease    Active   21m
 kube-public        Active   21m
 kube-system        Active   21m
-service-registry   Active   7m52s
+soa-registry   Active   7m52s
+```
+
+```shell
+kubectl get soa-registry -n soa-registry
 ```

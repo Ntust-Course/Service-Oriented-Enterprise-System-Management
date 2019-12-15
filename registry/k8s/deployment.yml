@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-registry
-  namespace: service-registry
+  name: soa-registry
+  namespace: soa-registry
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: service-registry
+      app: soa-registry
   template:
     metadata:
       labels:
-        app: service-registry
+        app: soa-registry
     spec:
       containers:
-        - name: service-registry
+        - name: soa-registry
           image: sheiun/soa-registry:latest
           imagePullPolicy: Always
           ports:
