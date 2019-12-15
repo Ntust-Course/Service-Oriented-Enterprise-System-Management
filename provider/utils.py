@@ -2,7 +2,7 @@ import requests
 
 INV = 10000
 
-REGISTRY_URL = "http://localhost:5000/api/registry"
+REGISTRY_URL = "http://registry:5000/api/registry"
 
 
 def register(service: dict):
