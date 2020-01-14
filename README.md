@@ -2,7 +2,8 @@
 
 ## Final Presentation
 
-> Only codes on GitHub, other documents maybe publish on _Notion_ soon.
+- [Code - GitHub](https://github.com/Ntust-Course/Service-Oriented-Enterprise-System-Management/)
+- [Presentation (Chinese only) - Notion](https://www.notion.so/taiwantech/SOA-3cc69c14f7304940b2e9d258435e70e8)
 
 ## Fundamental
 
